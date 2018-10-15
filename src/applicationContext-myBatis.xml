@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" 
+	"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+            
+	<!-- Configure MyBatis DB template -->  
+ 	<bean id="sqlSessionTemplate"   
+ 		class="org.mybatis.spring.SqlSessionTemplate"> 
+		<constructor-arg index="0" ref="sqlSessionFactory"/>    
+	</bean>
+	<!-- Configure DAO classes -->     
+    <bean id="petDAOImpl" 
+		class="com.learning.spring.db.mybatis.PetDAOImpl">  
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+	</bean>
+</beans>
