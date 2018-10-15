@@ -32,6 +32,12 @@ public class CoreMyBatisMain {
 		return sqlSessionFactory.openSession();
 	}
 
+	public PetDVO getPetObject(String petName) throws Exception {
+		HashMap<String, String> inputMap = new HashMap<String, String>();
+		inputMap.put("name", petName);
+		return (PetDVO) getSqlSession().selectOne("getPetObject", inputMap);
+	}
+
 	public List<PetDVO> getAllPetsData() throws Exception {
 		return getSqlSession().selectList("getAllPets");
 	}
