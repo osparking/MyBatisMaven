@@ -20,4 +20,49 @@
 		= #{name}
 	</select>
 
+	<select id="getAllSpecies" resultType="java.lang.String">
+		SELECT distinct(SPECIES)
+		FROM Pet
+	</select>
+
+	<resultMap id="byGenderMap" type="PetDVO">
+		<id property="sex" column="sex" />
+		<result property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="owner" column="owner" />
+		<result property="species" column="species" />
+		<result property="birth" column="birth" />
+		<result property="death" column="death" />
+	</resultMap>
+
+	<select id="selectByGender" parameterType="java.lang.String"
+		resultMap="byGenderMap">
+		SELECT ID as id, NAME as name, OWNER as owner, SPECIES as
+		species,
+		SEX as sex, BIRTH as birth, DEATH as death
+		FROM Pet where
+		SEX=#{sex}
+	</select>
+
+	<insert id="createPet" parameterType="java.util.Map"
+		useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO Pet (NAME, OWNER,
+		SPECIES, SEX, BIRTH)
+		VALUES (#{name}, #{owner}, #{species}, #{sex},
+		#{birth})
+	</insert>
+
+	<update id="updatePetData" parameterType="java.util.Map">
+		UPDATE Pet p
+		SET p.owner
+		= #{owner}, p.species = #{species}, p.sex = #{sex},
+		p.death = #{death}
+		WHERE p.name = #{name}
+	</update>
+
+	<delete id="deletePet" parameterType="java.util.Map">
+		DELETE FROM Pet
+		WHERE name =
+		#{name} AND species = #{species}
+	</delete>
 </mapper>
