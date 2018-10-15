@@ -1,25 +1,16 @@
-package com.learning.spring.db.mybatis;
+package com.learning.spring.db;
 
 import java.io.Serializable;
 import java.util.Date;
 
 @SuppressWarnings("serial")
 public class PetDVO implements Serializable {
-	private Integer id;
 	private String name;
 	private String owner;
 	private String species;
 	private String sex;
 	private Date birth;
 	private Date death;
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
 	public String getName() {
 		return name;
