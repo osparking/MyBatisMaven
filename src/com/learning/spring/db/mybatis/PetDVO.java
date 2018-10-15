@@ -1,7 +1,7 @@
 package com.learning.spring.db.mybatis;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 
 @SuppressWarnings("serial")
 public class PetDVO implements Serializable {
@@ -67,6 +67,12 @@ public class PetDVO implements Serializable {
 
 	public void setDeath(Date death) {
 		this.death = death;
+	}
+
+	@Override
+	public String toString() {
+		return "애완동물 [이름=" + name + ", 소유자=" + owner + ", 종류=" + species + ", 암수=" + sex + ", 출생=" + birth + ", 사망="
+				+ death + "]";
 	}
 
 }
