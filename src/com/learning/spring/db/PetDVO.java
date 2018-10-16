@@ -5,12 +5,21 @@ import java.util.Date;
 
 @SuppressWarnings("serial")
 public class PetDVO implements Serializable {
+	private int id;
 	private String name;
 	private String owner;
 	private String species;
 	private String sex;
 	private Date birth;
 	private Date death;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public String getName() {
 		return name;

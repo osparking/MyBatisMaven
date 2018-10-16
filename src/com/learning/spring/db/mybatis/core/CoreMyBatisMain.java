@@ -33,7 +33,7 @@ public class CoreMyBatisMain {
 //			System.out.println("--- 애완동물 숫자 ----" + allPets.size());
 
 			// Case 3. 애완동물 종류 목록 출력
-//			System.out.println(main.getAllSpecies());
+			System.out.println(main.getAllSpecies());
 
 			/**
 			 * Case 4. 애완동물 암수별 목록 력
