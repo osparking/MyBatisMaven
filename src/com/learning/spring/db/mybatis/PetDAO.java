@@ -6,4 +6,10 @@ import com.learning.spring.db.PetDVO;
 
 public interface PetDAO {
 	List<PetDVO> getAllPetsData();
+	PetDVO getPetObject(String petName) throws Exception;
+	List<String> getAllSpecies();
+	List<PetDVO> selectByGender(String sex) throws Exception;
+	int createPet(PetDVO petDVO) throws Exception;
+	void updatePetData(PetDVO petDVO) throws Exception;
+	int deletePet(String species, String name) throws Exception;
 }

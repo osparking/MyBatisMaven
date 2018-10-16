@@ -6,7 +6,8 @@
 	<select id="getAllPets" resultType="PetDVO">
 		SELECT ID as id, NAME as
 		name, OWNER as owner,
-		SPECIES as species, SEX as sex, BIRTH as birth,
+		SPECIES as species, SEX as sex,
+		BIRTH as birth,
 		DEATH as death
 		FROM Pet
 	</select>
@@ -22,6 +23,7 @@
 
 	<select id="getAllSpecies" resultType="java.lang.String">
 		SELECT distinct(SPECIES)
+		as species
 		FROM Pet
 	</select>
 
@@ -46,23 +48,20 @@
 
 	<insert id="createPet" parameterType="java.util.Map"
 		useGeneratedKeys="true" keyProperty="id">
-		INSERT INTO Pet (NAME, OWNER,
-		SPECIES, SEX, BIRTH)
+		INSERT INTO Pet (NAME, OWNER, SPECIES, SEX,
+		BIRTH, DEATH)
 		VALUES (#{name}, #{owner}, #{species}, #{sex},
-		#{birth})
+		#{birth}, #{death})
 	</insert>
 
 	<update id="updatePetData" parameterType="java.util.Map">
 		UPDATE Pet p
-		SET p.owner
-		= #{owner}, p.species = #{species}, p.sex = #{sex},
-		p.death = #{death}
+		SET p.owner	= #{owner}, p.death = #{death}
 		WHERE p.name = #{name}
 	</update>
 
 	<delete id="deletePet" parameterType="java.util.Map">
 		DELETE FROM Pet
-		WHERE name =
-		#{name} AND species = #{species}
+		WHERE name = #{name} AND species = #{species}
 	</delete>
 </mapper>
