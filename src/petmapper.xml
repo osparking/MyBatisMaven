@@ -46,22 +46,72 @@
 		SEX=#{sex}
 	</select>
 
+	<select id="findAllSnakes" parameterType="PetDVO"
+		resultType="PetDVO">
+		SELECT * FROM Pet WHERE species = #{species}
+		<if test="sex != null">
+			AND sex = #{sex}
+		</if>
+		<if test="owner != null">
+			AND owner like #{owner}
+		</if>
+	</select>
+
+	<select id="findSnakePets" parameterType="PetDVO"
+		resultType="PetDVO">
+		SELECT * FROM Pet WHERE species = #{species}
+		<choose>
+			<when test="sex != null">
+				AND sex = #{sex}
+			</when>
+			<when test="owner != null">
+				AND owner like #{owner}
+			</when>
+			<otherwise>
+				AND name like '스%'
+			</otherwise>
+		</choose>
+	</select>
+
+	<select id="selectPetsIn" resultType="PetDVO">
+		SELECT * FROM Pet P WHERE species IN
+		<foreach item="item" index="index" collection="speciesList"
+			open="(" separator=", " close=")">
+			#{item}
+		</foreach>
+	</select>
+
+	<update id="updatePetDynamically" parameterType="java.util.Map">
+		UPDATE Pet
+		<set>
+			<if test="birth != null"> birth = #{birth}, </if>
+			<if test="death != null"> death = #{death}, </if>
+			<if test="sex != null"> sex = #{sex} </if>
+		</set>
+		WHERE name = #{name}
+	</update>
+
 	<insert id="createPet" parameterType="java.util.Map"
 		useGeneratedKeys="true" keyProperty="id">
-		INSERT INTO Pet (NAME, OWNER, SPECIES, SEX,
+		INSERT INTO Pet (NAME, OWNER,
+		SPECIES, SEX,
 		BIRTH, DEATH)
-		VALUES (#{name}, #{owner}, #{species}, #{sex},
+		VALUES (#{name}, #{owner}, #{species},
+		#{sex},
 		#{birth}, #{death})
 	</insert>
 
 	<update id="updatePetData" parameterType="java.util.Map">
 		UPDATE Pet p
-		SET p.owner	= #{owner}, p.death = #{death}
+		SET p.owner
+		= #{owner}, p.death = #{death}
 		WHERE p.name = #{name}
 	</update>
 
 	<delete id="deletePet" parameterType="java.util.Map">
 		DELETE FROM Pet
-		WHERE name = #{name} AND species = #{species}
+		WHERE name =
+		#{name} AND species = #{species}
 	</delete>
+
 </mapper>
