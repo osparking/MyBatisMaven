@@ -1,10 +1,10 @@
 package com.learning.spring.db.mybatis;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionTemplate;
 
 import com.learning.spring.db.PetDVO;
@@ -77,5 +77,46 @@ public class PetDaoImpl implements PetDAO {
 		inputMap.put("name", name);
 
 		return sqlSessionTemplate.delete("deletePet", inputMap);
+	}
+
+	@Override
+	public List<PetDVO> findAllSnakes() {
+		HashMap<String, String> inputMap = new HashMap<String, String>();
+		inputMap.put("species", "뱀");
+		inputMap.put("sex", "m");
+		inputMap.put("owner", "남%");
+
+		return sqlSessionTemplate.selectList("findAllSnakes", inputMap);
+	}
+
+	@Override
+	public List<PetDVO> findSnakePets() {
+		HashMap<String, String> inputMap = new HashMap<String, String>();
+		inputMap.put("species", "뱀");
+		inputMap.put("sex", "m");
+		inputMap.put("owner", "남%");
+		return sqlSessionTemplate.selectList("findSnakePets", inputMap);
+	}
+
+	@Override
+	public List<PetDVO> selectPetsIn() {
+		HashMap<String, Object> inputMap = new HashMap<String, Object>();
+		List<String> speciesList = new ArrayList<String>();
+
+		speciesList.add("강아지");
+		speciesList.add("고양이");
+		speciesList.add("뱀");
+		inputMap.put("speciesList", speciesList);
+		return sqlSessionTemplate.selectList("selectPetsIn", inputMap);
+	}
+
+	@Override
+	public void updatePetDynamically(PetDVO petDVO) {
+		HashMap<String, Object> inputMap = new HashMap<String, Object>();
+		inputMap.put("birth", petDVO.getBirth());
+		inputMap.put("death", petDVO.getDeath());
+		inputMap.put("sex", petDVO.getSex());
+		inputMap.put("name", petDVO.getName());
+		sqlSessionTemplate.update("updatePetDynamically", inputMap);
 	}
 }

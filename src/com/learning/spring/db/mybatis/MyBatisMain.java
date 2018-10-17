@@ -1,8 +1,8 @@
 package com.learning.spring.db.mybatis;
 
-import java.util.Calendar;
+import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -66,10 +66,9 @@ public class MyBatisMain {
 //			petObj.setDeath(cal.getTime());
 //			int petId = petDaoImpl.createPet(petObj);
 //			System.out.println("ID: " + petId);
-			
+
 			/**
-			 * 투캅스 정보를 일부 수정한다. 투캅스 두 마리 청와대 입양 반영
-			 * 수정(갱신) 후, 그 동물의 정보를 출력
+			 * 투캅스 정보를 일부 수정한다. 투캅스 두 마리 청와대 입양 반영 수정(갱신) 후, 그 동물의 정보를 출력
 			 */
 //			PetDVO petDataObj = new PetDVO();
 //			String name = "투캅스";
@@ -82,14 +81,43 @@ public class MyBatisMain {
 //			PetDVO pet = petDaoImpl.getPetObject(name);
 //			System.out.println("--- 애완동물 ---");
 //			System.out.println(pet);			
-			
+
 			/**
 			 * 특정 종(species)과 이름이 주어졌을 때 애완동물을 삭제하기
 			 */
-			HashMap<String, String> inputMap = new HashMap<String, String>();
-			int delCnt = petDaoImpl.deletePet("파충류", "투캅스");
-			System.out.println("삭제된 애완 동물 수: " + delCnt);
-			
+//			HashMap<String, String> inputMap = new HashMap<String, String>();
+//			int delCnt = petDaoImpl.deletePet("파충류", "투캅스");
+//			System.out.println("삭제된 애완 동물 수: " + delCnt);
+
+			/**
+			 * 남씨가 키우는 뱀을 나열하자.
+			 */
+//			List<PetDVO> snakes = petDaoImpl.findAllSnakes();
+//			for (PetDVO snake : snakes)
+//				System.out.println(snake);
+
+			/**
+			 * 남씨가 키우는 뱀을 나열하자 - switch
+			 */
+//			List<PetDVO> snakes = petDaoImpl.findSnakePets();
+//			for (PetDVO snake : snakes)
+//				System.out.println(snake);
+
+			/**
+			 * 다음 종에 속한 애완동물 나열 마바-스프링-foreach
+			 */
+//			List<PetDVO> pets = petDaoImpl.selectPetsIn();
+//			for (PetDVO pet : pets)
+//				System.out.println(pet);
+
+			/**
+			 * 누리 가 오늘 죽었다는 것을 갱신하자
+			 */
+			PetDVO petDVO = new PetDVO();
+			petDVO.setName("누리");
+			petDVO.setDeath(new Date());
+			petDaoImpl.updatePetDynamically(petDVO);
+
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
