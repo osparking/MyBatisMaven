@@ -1,16 +1,29 @@
 package com.learning.spring.db.mybatis;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 /**
  * 파일 이름: PetDaoImpl.java
  */
 import org.mybatis.spring.SqlSessionTemplate;
-import java.util.*;
+
+import com.learning.spring.db.PetDVO;
 
 public class PetDaoImpl implements PetDAO {
 	private SqlSessionTemplate sqlSessionTemplate;
 
 	public void setSqlSessionTemplate(SqlSessionTemplate sqlSessionTemplate) {
 		this.sqlSessionTemplate = sqlSessionTemplate;
+	}
+
+	public List<PetDVO> callReadAllPets() {
+		HashMap<String, List<PetDVO>> inputMap = new HashMap<String, List<PetDVO>>();
+		List<PetDVO> petList = new ArrayList<PetDVO>();
+		inputMap.put("petData", petList);
+		List<PetDVO> outputData = sqlSessionTemplate.selectList("callReadAllPets");
+		return outputData;
 	}
 
 	public void callReadPet() {

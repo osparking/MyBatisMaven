@@ -1,10 +1,13 @@
 package com.learning.db.mybatis;
 
+import java.util.List;
+
 /**
  * 파일 이름: MyBatisTestStoredProcedures.java
  */
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.learning.spring.db.PetDVO;
 import com.learning.spring.db.mybatis.PetDAO;
 
 public class MyBatisTestStoredProcedures {
@@ -13,7 +16,17 @@ public class MyBatisTestStoredProcedures {
 			ClassPathXmlApplicationContext appContext = new ClassPathXmlApplicationContext(
 					new String[] { "applicationContext-myBatis.xml" });
 			PetDAO petDAOImpl = (PetDAO) appContext.getBean("petDaoImpl");
-			petDAOImpl.callReadPet();
+//			petDAOImpl.callReadPet();
+
+			List<PetDVO> procResult = petDAOImpl.callReadAllPets();
+			/**
+			 * 애완동물 목록을 콘솔에 출력한다.
+			 */
+			System.out.println("--애완동물 수: " + procResult.size());
+
+			for (PetDVO petDVObj : procResult) {
+				System.out.println("----동물 이름: " + petDVObj.getName());
+			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
