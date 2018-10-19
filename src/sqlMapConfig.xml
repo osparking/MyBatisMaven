@@ -20,6 +20,6 @@
 
 	<!-- Configure mapper XML files -->
 	<mappers>
-		<mapper resource="mapper.xml"/>
+		<mapper resource="petmapper.xml"/>
 	</mappers>
 </configuration>

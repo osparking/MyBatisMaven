@@ -1,8 +1,6 @@
 package com.learning.spring.db.mybatis;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -116,7 +114,7 @@ public class MyBatisMain {
 			PetDVO petDVO = new PetDVO();
 			petDVO.setName("누리");
 			petDVO.setDeath(new Date());
-			petDaoImpl.updatePetDynamically(petDVO);
+//			petDaoImpl.updatePetDynamically(petDVO);
 
 		} catch (Exception ex) {
 			ex.printStackTrace();
