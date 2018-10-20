@@ -28,4 +28,11 @@ public class PetDAOAnno implements PetDAO {
 		PetMapper mapper = sqlSession.getMapper(PetMapper.class);
 		return mapper.callReadAllPets();
 	}
+
+	public void callReadPet(PetDVO petDVO) throws Exception {
+		SqlSession sqlSession = getSqlSession();
+		PetMapper mapper = sqlSession.getMapper(PetMapper.class);
+
+		mapper.callReadPet(petDVO); 
+	}
 }
