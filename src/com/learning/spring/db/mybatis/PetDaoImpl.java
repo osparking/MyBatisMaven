@@ -41,4 +41,16 @@ public class PetDaoImpl implements PetDAO {
 		System.out.println("--- 종류   : " + inputMap.get("species"));
 		System.out.println("--- 암/수  : " + inputMap.get("sex"));
 	}
+
+	public void callPetOwnerFunction() {
+		HashMap<String, String> inputMap = new HashMap<String, String>();
+		inputMap.put("name", "스륵이");
+
+		sqlSessionTemplate.selectOne("callPetOwnerFunction", inputMap);
+
+		/**
+		 * 함수 호출 반환 값 콘솔 출력
+		 */
+		System.out.println("--- 애완동물 주인 : " + inputMap.get("owner"));
+	}
 }

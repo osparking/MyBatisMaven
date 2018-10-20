@@ -16,17 +16,29 @@ public class MyBatisTestStoredProcedures {
 			ClassPathXmlApplicationContext appContext = new ClassPathXmlApplicationContext(
 					new String[] { "applicationContext-myBatis.xml" });
 			PetDAO petDAOImpl = (PetDAO) appContext.getBean("petDaoImpl");
-//			petDAOImpl.callReadPet();
 
-			List<PetDVO> procResult = petDAOImpl.callReadAllPets();
 			/**
-			 * 애완동물 목록을 콘솔에 출력한다.
+			 * 예제 3
 			 */
-			System.out.println("--애완동물 수: " + procResult.size());
+			petDAOImpl.callPetOwnerFunction();
 
-			for (PetDVO petDVObj : procResult) {
-				System.out.println("----동물 이름: " + petDVObj.getName());
-			}
+			/**
+			 * 예제 2
+			 */
+//			List<PetDVO> procResult = petDAOImpl.callReadAllPets();
+//			/**
+//			 * 애완동물 목록을 콘솔에 출력한다.
+//			 */
+//			System.out.println("--애완동물 수: " + procResult.size());
+//
+//			for (PetDVO petDVObj : procResult) {
+//				System.out.println("----동물 이름: " + petDVObj.getName());
+//			}
+
+			/**
+			 * 예제 1
+			 */
+//			petDAOImpl.callReadPet();
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}

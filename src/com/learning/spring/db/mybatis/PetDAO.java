@@ -12,4 +12,5 @@ import com.learning.spring.db.PetDVO;
 public interface PetDAO {
 	void callReadPet();
 	List<PetDVO> callReadAllPets();
+	public void callPetOwnerFunction();
 }
