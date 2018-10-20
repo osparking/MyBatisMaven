@@ -15,6 +15,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.learning.spring.db.PetDVO;
+import com.learning.util.Commons;
 
 public class CoreMyBatisMain {
 
@@ -79,7 +80,7 @@ public class CoreMyBatisMain {
 //			petDataObj.setOwner("이면");
 //			petDataObj.setSpecies("고양이");
 //			petDataObj.setSex("m");
-//			petDataObj.setDeath(getDate("1592-10-15"));
+//			petDataObj.setDeath(Commons.getDate("1592-10-15"));
 //			petDataObj.setName(name);
 
 			/**
@@ -139,17 +140,6 @@ public class CoreMyBatisMain {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
-	}
-
-	private static Date getDate(String dateString) {
-		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-		Date diedOn = null;
-		try {
-			diedOn = df.parse(dateString);
-		} catch (java.text.ParseException e) {
-			e.printStackTrace();
-		}
-		return diedOn;
 	}
 
 	private static SqlSession getSqlSession() throws Exception {

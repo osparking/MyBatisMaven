@@ -10,7 +10,11 @@ import com.learning.spring.db.PetDVO;
  *
  */
 public interface PetDAO {
-	void callReadPet();
-	List<PetDVO> callReadAllPets();
-	public void callPetOwnerFunction();
+	default void callReadPet() {
+		System.out.println("기본 callReadPet");
+	};
+	List<PetDVO> callReadAllPets() throws Exception ;
+	default public void callPetOwnerFunction() {
+		System.out.println("기본 callPetOwnerFunction");
+	};
 }
