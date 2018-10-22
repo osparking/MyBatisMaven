@@ -14,8 +14,7 @@ public class PetDaoImpl implements PetDAO {
 	private SqlSessionTemplate sqlSessionTemplate;
 
 	public List<PetDVO> getAllPetsData() {
-		List<PetDVO> result = sqlSessionTemplate.selectList("getAllPets");
-		return result;
+		return sqlSessionTemplate.selectList("getAllPets");
 	}
 
 	public PetDVO getPetObject(String petName) throws Exception {
@@ -30,14 +29,14 @@ public class PetDaoImpl implements PetDAO {
 
 	@Override
 	public List<String> getAllSpecies() {
-		return sqlSessionTemplate.selectList("getAllSpecies");
+		return (List<String>) (Object)sqlSessionTemplate.selectList("getAllSpecies");
 	}
 
 	@Override
 	public List<PetDVO> selectByGender(String sex) throws Exception {
 		HashMap<String, String> inputMap = new HashMap<String, String>();
 		inputMap.put("sex", sex);
-		return sqlSessionTemplate.selectList("selectByGender", inputMap);
+		return (List<PetDVO>)(Object)sqlSessionTemplate.selectList("selectByGender", inputMap);
 	}
 
 	@Override
@@ -86,18 +85,20 @@ public class PetDaoImpl implements PetDAO {
 		inputMap.put("sex", "m");
 		inputMap.put("owner", "남%");
 
-		return sqlSessionTemplate.selectList("findAllSnakes", inputMap);
+		return (List<PetDVO>)(Object)sqlSessionTemplate.selectList("findAllSnakes", inputMap);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<PetDVO> findSnakePets() {
 		HashMap<String, String> inputMap = new HashMap<String, String>();
 		inputMap.put("species", "뱀");
 		inputMap.put("sex", "m");
 		inputMap.put("owner", "남%");
-		return sqlSessionTemplate.selectList("findSnakePets", inputMap);
+		return (List<PetDVO>)(Object) sqlSessionTemplate.selectList("findSnakePets", inputMap);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<PetDVO> selectPetsIn() {
 		HashMap<String, Object> inputMap = new HashMap<String, Object>();
@@ -107,7 +108,7 @@ public class PetDaoImpl implements PetDAO {
 		speciesList.add("고양이");
 		speciesList.add("뱀");
 		inputMap.put("speciesList", speciesList);
-		return sqlSessionTemplate.selectList("selectPetsIn", inputMap);
+		return (List<PetDVO>)(Object)sqlSessionTemplate.selectList("selectPetsIn", inputMap);
 	}
 
 	@Override
