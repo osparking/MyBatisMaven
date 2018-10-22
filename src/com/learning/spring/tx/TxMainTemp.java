@@ -8,7 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.learning.db.mybatis.tx.dao.PetDAO;
 
-public class TxMain {
+public class TxMainTemp {
 	public static void main(final String[] args) throws Exception {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext(
 				new String[] { "applicationContext-tx-template.xml" });
