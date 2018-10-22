@@ -2,11 +2,7 @@ package com.learning.spring.db;
 
 import java.io.Serializable;
 import java.util.Date;
-<<<<<<< HEAD
-=======
-
 import com.learning.Util;
->>>>>>> 6cc484f... Util getY4MMDD method added
 
 @SuppressWarnings("serial")
 public class PetDVO implements Serializable {

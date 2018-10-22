@@ -1,8 +1,6 @@
 package com.learning.spring.db.mybatis;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

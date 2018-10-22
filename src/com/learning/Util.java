@@ -12,6 +12,10 @@ public class Util {
 		return date;
 	}
 	
+	public static String inKoean(boolean b) {
+		return (b ? "예" : "아니오");
+	}
+	
 	public static Date getDate(String dateString) {
 		Date diedOn = null;
 		try {

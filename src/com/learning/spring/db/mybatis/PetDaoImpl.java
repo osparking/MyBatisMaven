@@ -27,11 +27,13 @@ public class PetDaoImpl implements PetDAO {
 		this.sqlSessionTemplate = sqlSessionTemplate;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getAllSpecies() {
 		return (List<String>) (Object)sqlSessionTemplate.selectList("getAllSpecies");
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<PetDVO> selectByGender(String sex) throws Exception {
 		HashMap<String, String> inputMap = new HashMap<String, String>();
@@ -78,6 +80,7 @@ public class PetDaoImpl implements PetDAO {
 		return sqlSessionTemplate.delete("deletePet", inputMap);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<PetDVO> findAllSnakes() {
 		HashMap<String, String> inputMap = new HashMap<String, String>();
