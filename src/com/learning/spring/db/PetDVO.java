@@ -2,7 +2,8 @@ package com.learning.spring.db;
 
 import java.io.Serializable;
 import java.util.Date;
-import com.learning.util.Commons;
+
+import com.learning.Util;
 
 @SuppressWarnings("serial")
 public class PetDVO implements Serializable {
@@ -72,8 +73,8 @@ public class PetDVO implements Serializable {
 
 	@Override
 	public String toString() {
-		String bDay = Commons.getY4MMDD(birth);
-		String dDay = Commons.getY4MMDD(birth);
+		String bDay = Util.getY4MMDD(birth);
+		String dDay = Util.getY4MMDD(birth);
 		String output = "애완동물 [이름=" + name + ", 소유자=" + owner;
 		output += ", 종류=" + species + ", 암수=" + sex;
 		output += ", 출생=" + bDay + ", 사망="	+ dDay + "]"; 

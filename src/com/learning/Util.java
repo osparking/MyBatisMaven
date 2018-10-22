@@ -1,10 +1,10 @@
-package com.learning.util;
+package com.learning;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Commons {
+public class Util {
 	final static DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 	
 	public static String getY4MMDD(Date d) {
