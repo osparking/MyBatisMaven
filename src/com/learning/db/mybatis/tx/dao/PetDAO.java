@@ -8,4 +8,6 @@ public interface PetDAO {
 	public void updatePetData();
 
 	void doInsertAndUpdateUsingTxTemplate();
+	
+	void doInsertAndUpdateInTxAnno();
 }
