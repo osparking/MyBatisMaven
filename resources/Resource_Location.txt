@@ -1,0 +1,2 @@
+org.springframework.beans/3.0.7.RELEASE/
+  http://nexus.bsdn.org/content/repositories/public/org/springframework/org.springframework.beans/3.0.7.RELEASE/
