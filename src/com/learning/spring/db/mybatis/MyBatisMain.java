@@ -19,14 +19,14 @@ public class MyBatisMain {
 			/**
 			 * 애완동물 목록 출력
 			 */
-//			List <PetDVO> pets = petDaoImpl.getAllPetsData();
+			List <PetDVO> pets = petDaoImpl.getAllPetsData();
 
 			/**
 			 * 애완동물 이름으로 찾아 출력
 			 */
-//			PetDVO pet = petDaoImpl.getPetObject("누리");
-//			System.out.println("--- 애완동물 ---");
-//			System.out.println(pet);
+			PetDVO pet = petDaoImpl.getPetObject("누리");
+			System.out.println("--- 애완동물 ---");
+			System.out.println(pet);
 
 			/**
 			 * 모든 애완 동물 정보 출력
