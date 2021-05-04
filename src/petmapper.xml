@@ -87,7 +87,7 @@
 			<if test="death != null"> death = #{death}, </if>
 			<if test="sex != null"> sex = #{sex}, </if>
 		</set>
-		WHERE name2 = #{name}
+		WHERE name = #{name}
 	</update>
 
 	<insert id="insertPet" parameterType="java.util.Map"

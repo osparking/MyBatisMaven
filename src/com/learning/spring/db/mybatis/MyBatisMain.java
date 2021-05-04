@@ -1,8 +1,12 @@
 package com.learning.spring.db.mybatis;
 
+import java.time.LocalDate;
 import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.learning.spring.db.PetDVO;
 
 public class MyBatisMain {
 
@@ -77,9 +81,9 @@ public class MyBatisMain {
 			/**
 			 * 특정 종(species)과 이름이 주어졌을 때 애완동물을 삭제하기
 			 */
-			HashMap<String, String> inputMap = new HashMap<String, String>();
-			int delCnt = petDaoImpl.deletePet("개", "깜두3");
-			System.out.println("삭제된 애완 동물 수: " + delCnt);
+//			HashMap<String, String> inputMap = new HashMap<String, String>();
+//			int delCnt = petDaoImpl.deletePet("개", "깜두3");
+//			System.out.println("삭제된 애완 동물 수: " + delCnt);
 
 			/**
 			 * 남씨가 키우는 뱀을 나열하자.
@@ -105,10 +109,11 @@ public class MyBatisMain {
 			/**
 			 * 누리 가 오늘 죽었다는 것을 갱신하자
 			 */
-//			PetDVO petDVO = new PetDVO();
-//			petDVO.setName("누리");
-//			petDVO.setDeath(new Date());
-//			petDaoImpl.updatePetDynamically(petDVO);
+			PetDVO petDVO = new PetDVO();
+			petDVO.setName("나비");
+			petDVO.setDeath(LocalDate.now()
+					.minusDays(1));
+			petDaoImpl.updatePetDynamically(petDVO);
 
 		} catch (Exception ex) {
 			ex.printStackTrace();

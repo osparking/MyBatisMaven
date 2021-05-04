@@ -108,7 +108,8 @@ public class PetDaoImpl implements PetDAO {
 		speciesList.add("고양이");
 		speciesList.add("뱀");
 		inputMap.put("speciesList", speciesList);
-		return sqlSessionTemplate.selectList("selectPetsIn", inputMap);
+		return sqlSessionTemplate.selectList(
+				"selectPetsIn", inputMap);
 	}
 
 	@Override

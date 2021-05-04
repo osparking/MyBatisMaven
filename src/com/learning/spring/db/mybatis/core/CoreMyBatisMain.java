@@ -190,7 +190,8 @@ public class CoreMyBatisMain {
 		speciesList.add("고양이");
 		speciesList.add("뱀");
 		inputMap.put("speciesList", speciesList);
-		return getSqlSession().selectList("selectPetsIn", inputMap);
+		return getSqlSession().selectList(
+				"selectPetsIn", inputMap);
 	}
 
 public void updatePetDynamically(PetDVO petDVO) throws Exception {
