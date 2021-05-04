@@ -1,6 +1,7 @@
 package com.learning.spring.db;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 @SuppressWarnings("serial")
@@ -10,8 +11,8 @@ public class PetDVO implements Serializable {
 	private String owner;
 	private String species;
 	private String sex;
-	private Date birth;
-	private Date death;
+	private LocalDate birth;
+	private LocalDate death;
 
 	public int getId() {
 		return id;
@@ -53,19 +54,19 @@ public class PetDVO implements Serializable {
 		this.sex = sex;
 	}
 
-	public Date getBirth() {
+	public LocalDate getBirth() {
 		return birth;
 	}
 
-	public void setBirth(Date birth) {
+	public void setBirth(LocalDate birth) {
 		this.birth = birth;
 	}
 
-	public Date getDeath() {
+	public LocalDate getDeath() {
 		return death;
 	}
 
-	public void setDeath(Date death) {
+	public void setDeath(LocalDate death) {
 		this.death = death;
 	}
 

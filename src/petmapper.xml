@@ -90,8 +90,8 @@
 		WHERE name = #{name}
 	</update>
 
-	<insert id="createPet" parameterType="java.util.Map"
-		useGeneratedKeys="true" keyProperty="id">
+	<insert id="insertPet" parameterType="java.util.Map"
+		useGeneratedKeys="true" keyProperty="petid">
 		INSERT INTO Pet (NAME, OWNER,
 		SPECIES, SEX,
 		BIRTH, DEATH)
@@ -102,8 +102,9 @@
 
 	<update id="updatePetData" parameterType="java.util.Map">
 		UPDATE Pet p
-		SET p.owner
-		= #{owner}, p.death = #{death}
+		SET p.owner = #{owner}, 
+			p.sex = #{sex}, 
+			p.death = #{death}
 		WHERE p.name = #{name}
 	</update>
 

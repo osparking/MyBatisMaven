@@ -41,7 +41,7 @@ public class PetDaoImpl implements PetDAO {
 	}
 
 	@Override
-	public int createPet(PetDVO petDVO) throws Exception {
+	public int insertPet(PetDVO petDVO) throws Exception {
 		HashMap<String, Object> inputMap = new HashMap<String, Object>();
 		inputMap.put("name", petDVO.getName());
 		inputMap.put("owner", petDVO.getOwner());
@@ -53,9 +53,9 @@ public class PetDaoImpl implements PetDAO {
 		/**
 		 * Get the sql session and commit the data
 		 */
-		sqlSessionTemplate.insert("createPet", inputMap);
+		sqlSessionTemplate.insert("insertPet", inputMap);
 
-		BigInteger newID = (BigInteger) inputMap.get("id");
+		BigInteger newID = (BigInteger) inputMap.get("petid");
 		return newID.intValue();
 	}
 
@@ -64,6 +64,7 @@ public class PetDaoImpl implements PetDAO {
 		HashMap<String, Object> inputMap = new HashMap<String, Object>();
 
 		inputMap.put("owner", petDVO.getOwner());
+		inputMap.put("sex", petDVO.getSex());
 		inputMap.put("death", petDVO.getDeath());
 		inputMap.put("name", petDVO.getName());
 
