@@ -12,7 +12,7 @@ public interface PetDAO {
 	int insertPet(PetDVO petDVO) throws Exception;
 	void updatePetData(PetDVO petDVO) throws Exception;
 	int deletePet(String species, String name) throws Exception;
-	public List<PetDVO> findAllSnakes();
+	public List<PetDVO> findSomePets();
 	public List<PetDVO> findSnakePets();
 	public List<PetDVO> selectPetsIn();
 	public void updatePetDynamically(PetDVO petDVO);

@@ -45,7 +45,7 @@
 		where SEX=#{sex}
 	</select>
 
-	<select id="findAllSnakes" parameterType="PetDVO"
+	<select id="findSomePets" parameterType="PetDVO"
 		resultType="PetDVO">
 		SELECT * FROM Pet WHERE species = #{species}
 		<if test="sex != null">
@@ -85,9 +85,9 @@
 		<set>
 			<if test="birth != null"> birth = #{birth}, </if>
 			<if test="death != null"> death = #{death}, </if>
-			<if test="sex != null"> sex = #{sex} </if>
+			<if test="sex != null"> sex = #{sex}, </if>
 		</set>
-		WHERE name = #{name}
+		WHERE name2 = #{name}
 	</update>
 
 	<insert id="insertPet" parameterType="java.util.Map"
