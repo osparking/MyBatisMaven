@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="D:/work/smvc/jars/mysql-connector-java-8.0.12.jar"/>
-	<classpathentry kind="lib" path="D:/work/smvc/jars/mybatis-3.4.6.jar"/>
-	<classpathentry kind="lib" path="D:/work/smvc/jars/mybatis-spring-1.3.2.jar" sourcepath="C:/Users/310/.m2/repository/org/mybatis/mybatis-spring/1.3.2/mybatis-spring-1.3.2-sources.jar"/>
-	<classpathentry kind="lib" path="D:/work/smvc/jars/commons-logging-1.2.jar"/>
-	<classpathentry kind="lib" path="D:/work/smvc/jars/org.springframework.aop-3.0.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="D:/work/smvc/jars/org.springframework.asm-3.0.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="D:/work/smvc/jars/org.springframework.aspects-3.0.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="D:/work/smvc/jars/org.springframework.beans-3.0.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="D:/work/smvc/jars/org.springframework.context.support-3.0.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="D:/work/smvc/jars/org.springframework.transaction-3.0.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="D:/work/smvc/jars/org.springframework.orm-3.0.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="D:/work/smvc/jars/org.springframework.jdbc-3.0.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="D:/work/smvc/jars/org.springframework.expression-3.0.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="D:/work/smvc/jars/org.springframework.core-3.0.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="D:/work/smvc/jars/org.springframework.context-3.0.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="resources/mysql-connector-java-8.0.12.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/1.8.281"/>
+	<classpathentry kind="lib" path="resources/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="resources/mybatis-3.4.6.jar"/>
+	<classpathentry kind="lib" path="resources/mybatis-spring-1.3.2.jar"/>
+	<classpathentry kind="lib" path="resources/mysql-connector-java-8.0.12.jar"/>
+	<classpathentry kind="lib" path="resources/org.springframework.aop-3.0.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="resources/org.springframework.asm-3.0.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="resources/org.springframework.aspects-3.0.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="resources/org.springframework.beans-3.0.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="resources/org.springframework.context.support-3.0.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="resources/org.springframework.context-3.0.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="resources/org.springframework.core-3.0.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="resources/org.springframework.expression-3.0.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="resources/org.springframework.jdbc-3.0.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="resources/org.springframework.orm-3.0.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="resources/org.springframework.transaction-3.0.7.RELEASE.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

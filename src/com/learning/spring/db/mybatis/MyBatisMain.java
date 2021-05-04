@@ -78,7 +78,7 @@ public class MyBatisMain {
 			 * 특정 종(species)과 이름이 주어졌을 때 애완동물을 삭제하기
 			 */
 			HashMap<String, String> inputMap = new HashMap<String, String>();
-			int delCnt = petDaoImpl.deletePet("개", "깜두2");
+			int delCnt = petDaoImpl.deletePet("개", "깜두3");
 			System.out.println("삭제된 애완 동물 수: " + delCnt);
 
 			/**

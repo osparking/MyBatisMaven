@@ -120,21 +120,21 @@ public class CoreMyBatisMain {
 //			for (PetDVO pet : selectedPets)
 //				System.out.println(pet);
 
-/**
- * 자료를 갱신한다.
- */
-PetDVO petDVO = new PetDVO();
-petDVO.setName("스륵이");
+			/**
+			 * 자료를 갱신한다.
+			 */
+			PetDVO petDVO = new PetDVO();
+			petDVO.setName("스륵이");
 
-/**
- * 뱀의 생일을 만든다.
- */
-String inputString = "1982-11-27";
-SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-Date inputDate = dateFormat.parse(inputString);
-
-petDVO.setBirth(inputDate);
-main.updatePetDynamically(petDVO);
+			/**
+			 * 뱀의 생일을 만든다.
+			 */
+			String inputString = "1982-11-27";
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+			Date inputDate = dateFormat.parse(inputString);
+			
+			//petDVO.setBirth(inputDate);
+			main.updatePetDynamically(petDVO);
 
 		} catch (Exception ex) {
 			ex.printStackTrace();
