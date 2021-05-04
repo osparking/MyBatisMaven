@@ -13,7 +13,7 @@ public class PetDaoImpl implements PetDAO {
 
 	private SqlSessionTemplate sqlSessionTemplate;
 
-	public List<PetDVO> getAllPetsData() {
+	public List<PetDVO> getAllPets() {
 		List<PetDVO> result = sqlSessionTemplate.selectList("getAllPets");
 		return result;
 	}

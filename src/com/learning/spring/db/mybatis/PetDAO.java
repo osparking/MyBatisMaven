@@ -5,7 +5,7 @@ import java.util.List;
 import com.learning.spring.db.PetDVO;
 
 public interface PetDAO {
-	List<PetDVO> getAllPetsData();
+	List<PetDVO> getAllPets();
 	PetDVO getPetObject(String petName) throws Exception;
 	List<String> getAllSpecies();
 	List<PetDVO> selectByGender(String sex) throws Exception;
