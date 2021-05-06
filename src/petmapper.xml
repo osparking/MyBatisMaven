@@ -8,7 +8,7 @@
 			#{name, mode=IN, jdbcType = VARCHAR},
 			#{owner, mode=OUT, jdbcType = VARCHAR},
 			#{species, mode=OUT, jdbcType = VARCHAR},
-			#{sex, mode=OUT, jdbcType = VARCHAR},
+			#{sex, mode=OUT, jdbcType = CHAR},
 			#{birth, mode=OUT, jdbcType = DATE},
 			#{death, mode=OUT, jdbcType = DATE}
 		)}
