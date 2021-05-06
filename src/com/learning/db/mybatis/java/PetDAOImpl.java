@@ -82,10 +82,5 @@ public class PetDAOImpl {
 		PetMapper mapper = sqlSession.getMapper(PetMapper.class);
 		mapper.insertPet(petDVO);
 		sqlSession.commit();
-		/**
-		 * 생성된 행의 ID 채취하여 콘솔 출력
-		 */
-		System.out.println("--- " + petDVO.getName() + " ID : " 
-				+ petDVO.getId());
 	}
 }

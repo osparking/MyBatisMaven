@@ -71,7 +71,9 @@ public interface PetMapper {
 	 * 
 	 * @param petDVO
 	 */
-	@Insert("INSERT INTO Pet (NAME, OWNER, SPECIES, SEX, BIRTH) VALUES (#{name}, #{owner}, #{species}, #{sex}, #{birth})")
-//	@Options(useGeneratedKeys = true, keyProperty = "id") 
+	@Insert("INSERT INTO Pet (NAME, OWNER, SPECIES, SEX, "
+			+ "BIRTH) VALUES (#{name}, #{owner}, #{species},"
+			+ " #{sex}, #{birth})")
+	@Options(useGeneratedKeys = true, keyProperty = "id") 
 	public void insertPet(PetDVO petDVO);
 }

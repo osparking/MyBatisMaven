@@ -14,7 +14,7 @@ public class JavaMyBatisMain {
 			/**
 			 * 모든 애완 동물을 추출한다.
 			 */
-//			main.selectAllPets();
+			main.selectAllPets();
 			main.insertPet();
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -74,11 +74,16 @@ public class JavaMyBatisMain {
 	private void insertPet() throws Exception {
 		PetDAOImpl petDAOImpl = new PetDAOImpl();
 		PetDVO petObj = new PetDVO();
-		petObj.setName("알록달록");
+		petObj.setName("알록달록4");
 		petObj.setOwner("땅군");
 		petObj.setSpecies("뱀");
 		petObj.setSex("f");
 		petObj.setBirth(new Date());
 		petDAOImpl.insertPet(petObj);
+		/**
+		 * 생성된 행의 ID 채취하여 콘솔 출력
+		 */
+		System.out.println("--- " + petObj.getName() + " ID : " 
+				+ petObj.getId());		
 	}
 }
