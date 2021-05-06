@@ -22,7 +22,7 @@ public interface PetMapper {
 			+ " #{ birth, mode = OUT, jdbcType = DATE}, "
 			+ " #{ death, mode = OUT, jdbcType = DATE} " 
 			+ " )} ")
-	// @formatter:on
 	@Options(statementType = StatementType.CALLABLE)
 	public void callReadPet(PetDVO petDVO);
+	// @formatter:on
 }

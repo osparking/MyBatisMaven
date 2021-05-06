@@ -75,7 +75,9 @@ public class PetDaoImpl implements PetDAO {
 
 	@Override
 	public void callReadPet(PetDVO petDVO) throws Exception {
-		// TODO Auto-generated method stub
-		
+		SqlSession sqlSession = getSqlSession();
+		PetMapper mapper = sqlSession.getMapper(PetMapper.class);
+
+		mapper.callReadPet(petDVO); 		
 	}
 }

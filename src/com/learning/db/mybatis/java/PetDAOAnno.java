@@ -29,6 +29,7 @@ public class PetDAOAnno implements PetDAO {
 		return mapper.callReadAllPets();
 	}
 
+	@Override
 	public void callReadPet(PetDVO petDVO) throws Exception {
 		SqlSession sqlSession = getSqlSession();
 		PetMapper mapper = sqlSession.getMapper(PetMapper.class);
