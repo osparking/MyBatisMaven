@@ -25,12 +25,12 @@ public class MyBatisTestStoredProcedures {
 			/**
 			 * 예제 2
 			 */
-			List<PetDVO> procResult = petDAOImpl.callReadAllPets();
+//			List<PetDVO> procResult = petDAOImpl.callReadAllPets();
 			/**
 			 * 애완동물 목록을 콘솔에 출력한다.
 			 */
-			System.out.println("--애완동물 수: " + procResult.size());
-			procResult.forEach(System.out::println);
+//			System.out.println("--애완동물 수: " + procResult.size());
+//			procResult.forEach(System.out::println);
 
 			/**
 			 * 예제 1

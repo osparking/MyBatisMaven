@@ -42,6 +42,7 @@ public class PetDaoImpl implements PetDAO {
 		System.out.println("--- 암/수  : " + inputMap.get("sex"));
 	}
 
+	@Override
 	public void callPetOwnerFunction() {
 		HashMap<String, String> inputMap = new HashMap<String, String>();
 		inputMap.put("name", "스륵이");
