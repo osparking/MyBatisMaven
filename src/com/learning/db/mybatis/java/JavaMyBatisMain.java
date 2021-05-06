@@ -11,8 +11,8 @@ public class JavaMyBatisMain {
 	public static void main(String[] args) {
 		try {
 			JavaMyBatisMain main = new JavaMyBatisMain();
-//			main.callReadAllPets();
-			main.callReadPet();			
+			main.callReadAllPets();
+//			main.callReadPet();			
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
