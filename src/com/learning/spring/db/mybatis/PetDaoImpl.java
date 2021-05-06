@@ -19,9 +19,9 @@ public class PetDaoImpl implements PetDAO {
 	}
 
 	public List<PetDVO> callReadAllPets() {
-		HashMap<String, List<PetDVO>> inputMap = new HashMap<String, List<PetDVO>>();
-		List<PetDVO> petList = new ArrayList<PetDVO>();
-		inputMap.put("petData", petList);
+//		HashMap<String, List<PetDVO>> inputMap = new HashMap<String, List<PetDVO>>();
+//		List<PetDVO> petList = new ArrayList<PetDVO>();
+//		inputMap.put("petData", petList);
 		List<PetDVO> outputData = sqlSessionTemplate.selectList("callReadAllPets");
 		return outputData;
 	}
@@ -52,5 +52,11 @@ public class PetDaoImpl implements PetDAO {
 		 * 함수 호출 반환 값 콘솔 출력
 		 */
 		System.out.println("--- 애완동물 주인 : " + inputMap.get("owner"));
+	}
+
+	@Override
+	public void callReadPet(PetDVO petDVO) throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 }
