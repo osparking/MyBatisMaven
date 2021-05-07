@@ -41,8 +41,8 @@ public class PetDAOImpl implements PetDAO {
 		/*
 		 * 의도적 예외 유발
 		 */
-		int i = 0;
-		int j = 100 / i;
+//		int i = 0;
+//		int j = 100 / i;
 
 		/**
 		 * 행 갱신
@@ -62,6 +62,7 @@ public class PetDAOImpl implements PetDAO {
 	}
 
 	@Override
+	@Transactional
 	public void doInsertAndUpdateInTx() {
 		try {
 			/**
@@ -71,16 +72,19 @@ public class PetDAOImpl implements PetDAO {
 			/**
 			 * Create an error to get the exception
 			 */
-			int i = 0;
-			int j = 100 / i;
+//			int i = 0;
+//			int j = 100 / i;
 			/**
 			 * 행 갱신
 			 */
 			updatePetData();
 		} catch (Exception ex) {
-			TransactionStatus status = TransactionAspectSupport.currentTransactionStatus();
-			System.out.println("** 삽입&갱신 성공인가? : " + Util.inKoean(status.isCompleted()));
-			status.setRollbackOnly();
+			boolean result = TransactionAspectSupport.currentTransactionStatus().isCompleted();
+//			TransactionStatus status = TransactionAspectSupport.currentTransactionStatus();
+//			System.out.println("** 삽입&갱신 성공인가? : " + Util.inKoean(status.isCompleted()));
+			System.out.println("** 삽입&갱신 성공인가? : " + result);
+			TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+//			status.setRollbackOnly();
 		}
 	}
 
@@ -120,7 +124,7 @@ public class PetDAOImpl implements PetDAO {
 		petDVO.setName("사사삭");
 		petDVO.setOwner("John");
 		petDVO.setSpecies("Snake");
-		petDVO.setSex("f");
+		petDVO.setSex("m");
 		petDVO.setBirth(new Date());
 		insertPet(petDVO);
 	}
@@ -132,7 +136,7 @@ public class PetDAOImpl implements PetDAO {
 		 */
 		PetDVO petDVO = new PetDVO();
 		petDVO.setName("날씨니");
-		petDVO.setSex("m");
+		petDVO.setSex("f");
 		petDVO.setBirth(new Date());
 		updatePetData(petDVO);
 	}
