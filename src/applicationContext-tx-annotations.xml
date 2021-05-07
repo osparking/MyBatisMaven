@@ -19,7 +19,7 @@ http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 			<value>jdbc:mysql://localhost/test?useSSL=false</value>
 		</property>
 		<property name="username">
-			<value>tester</value>
+			<value>test-user</value>
 		</property>
 		<property name="password">
 			<value>1234</value>

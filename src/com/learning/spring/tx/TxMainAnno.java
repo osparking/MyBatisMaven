@@ -14,8 +14,8 @@ public class TxMainAnno {
 				new String[] { "applicationContext-tx-annotations.xml" });
 		PetDAO petDAO = (PetDAO) ctx.getBean("petDAOImpl");
 		try {
-			petDAO.doInsertAndUpdateInTx();
-//			petDAO.doInsertAndUpdateInTxAnno();
+//			petDAO.doInsertAndUpdateInTx();
+			petDAO.doInsertAndUpdateInTxAnno();
 		} catch (Exception ex) {
 			//ex.printStackTrace();
 		}

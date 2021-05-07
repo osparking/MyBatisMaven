@@ -100,8 +100,8 @@ public class PetDAOImpl implements PetDAO {
 					/*
 					 * 의도적 예외 유발
 					 */
-					int i = 0;
-					int j = 100 / i;
+//					int i = 0;
+//					int j = 100 / i;
 					/*
 					 * 애완동물 갱신
 					 */
@@ -121,7 +121,7 @@ public class PetDAOImpl implements PetDAO {
 		 * 생성하는 애완동물 정보
 		 */
 		PetDVO petDVO = new PetDVO();
-		petDVO.setName("사사삭");
+		petDVO.setName("사사삭3");
 		petDVO.setOwner("John");
 		petDVO.setSpecies("Snake");
 		petDVO.setSex("m");
@@ -135,7 +135,7 @@ public class PetDAOImpl implements PetDAO {
 		 * 애완동물 속성을 바꾼다.
 		 */
 		PetDVO petDVO = new PetDVO();
-		petDVO.setName("날씨니");
+		petDVO.setName("사사삭3");
 		petDVO.setSex("f");
 		petDVO.setBirth(new Date());
 		updatePetData(petDVO);
