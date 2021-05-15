@@ -16,10 +16,16 @@ public class CoreMyBatisMain {
 	public static void main(String[] args) {
 		try {
 			CoreMyBatisMain main = new CoreMyBatisMain();
+			// Case 1. 하나의 영역 객체 읽기
+			String name = "스륵이";
+			PetDVO aPet = main.getPetObject(name);
+			System.out.println("이름: " + name);
+			System.out.println("\t종류: " + aPet.getSpecies());
+			System.out.println("\t주인: " + aPet.getOwner());
 
-			// Printing pets data
-			List<PetDVO> allPets = main.getAllPetsData();
-			System.out.println("--- 애완동물 숫자 ----" + allPets.size());
+			// Case 2. 애완동물 마리수 출력
+//			List<PetDVO> allPets = main.getAllPetsData();
+//			System.out.println("--- 애완동물 숫자 ----" + allPets.size());
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}

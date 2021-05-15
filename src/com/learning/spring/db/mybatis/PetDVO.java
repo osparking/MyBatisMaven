@@ -3,6 +3,7 @@ package com.learning.spring.db.mybatis;
 import java.io.Serializable;
 import java.sql.Date;
 
+@SuppressWarnings("serial")
 public class PetDVO implements Serializable {
 	private Integer id;
 	private String name;
