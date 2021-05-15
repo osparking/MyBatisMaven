@@ -1,6 +1,7 @@
 ﻿package com.learning.spring.db.mybatis.core;
 
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -29,6 +30,12 @@ public class CoreMyBatisMain {
 		InputStream inputStream = Resources.getResourceAsStream(resource);
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		return sqlSessionFactory.openSession();
+	}
+
+	public PetDVO getPetObject(String petName) throws Exception {
+		HashMap<String, String> inputMap = new HashMap<String, String>();
+		inputMap.put("name", petName);
+		return (PetDVO) getSqlSession().selectOne("getPetObject", inputMap);
 	}
 
 	public List<PetDVO> getAllPetsData() throws Exception {
