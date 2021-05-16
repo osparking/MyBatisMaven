@@ -97,11 +97,13 @@ public class CoreMyBatisMain {
 			String catName = "나비";
 			PetDVO pet = main.getPetObject(catName);
 
-			System.out.println("삭제 전: " + ((pet == null) ? "그런 동물 없습니다." : pet));
+			System.out.println("삭제 전: " +
+					((pet == null) ? "그런 동물 없습니다." : pet));
 			main.deletePet("고양이", catName);
 
 			pet = main.getPetObject(catName);
-			System.out.println("삭제 후: " + ((pet == null) ? "그런 동물 없습니다." : pet));
+			System.out.println("삭제 후: " +
+					((pet == null) ? "그런 동물 없습니다." : pet));
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
