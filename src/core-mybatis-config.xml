@@ -16,8 +16,9 @@
 	<!-- Configure domain objects -->
 	<typeAliases>
 		<typeAlias alias="PetDVO"
-			type="com.learning.spring.db.mybatis.PetDVO" />
+			type="com.learning.spring.db.PetDVO" />
 	</typeAliases>
+			<!-- type="com.learning.spring.db.mybatis.PetDVO" /> -->
 
 	<!-- Configure the datasource -->
 	<environments default="development">
