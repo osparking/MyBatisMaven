@@ -94,6 +94,7 @@ public class CoreMyBatisMain {
 			/**
 			 * 애완 동물 삭제 코드 시험
 			 */
+			// @formatter:off
 			String catName = "나비";
 			PetDVO pet = main.getPetObject(catName);
 
@@ -104,6 +105,7 @@ public class CoreMyBatisMain {
 			pet = main.getPetObject(catName);
 			System.out.println("삭제 후: " +
 					((pet == null) ? "그런 동물 없습니다." : pet));
+			// @formatter:on
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
