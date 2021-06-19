@@ -15,11 +15,11 @@
 	<!-- Configure domain objects -->
 	<typeAliases>
 		<typeAlias alias="PetDVO"
-			type="com.learning.spring.db.PetDVO"/>
+			type="com.learning.spring.db.PetDVO"/>	
 	</typeAliases>
 
 	<!-- Configure mapper XML files -->
 	<mappers>
-		<mapper resource="petmapper.xml"/>
+		<mapper resource="mapper.xml"/>
 	</mappers>
 </configuration>
